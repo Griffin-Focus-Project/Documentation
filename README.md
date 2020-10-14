@@ -18,7 +18,7 @@ sudo apt-get update
 sudo apt-get install ros-melodic-joy ros-melodic-octomap-ros ros-melodic-mavlink python-wstool python-catkin-tools protobuf-compiler libgoogle-glog-dev ros-melodic-control-toolbox ros-melodic-mavros
 sudo rosdep init
 rosdep update
-source /opt/ros/kinetic/setup.bash
+source /opt/ros/melodic/setup.bash
 ```
 Go to workspace ```/src```
 ```
