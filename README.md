@@ -6,4 +6,4 @@
 
 ## Paths (for .launch files)
 - ROS: ```cd /opt/ros/melodic/share/```
-- Gazebo ```cd /usr/share```
+- Gazebo ```cd /usr/share/gazebo-9```
