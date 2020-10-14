@@ -26,7 +26,8 @@ wget https://raw.githubusercontent.com/ethz-asl/rotors_simulator/master/rotors_h
 $ wstool merge rotors_hil.rosinstall
 $ wstool update
 ```
-Go to workspace
+Go to workspace   
+
 ```catkin build```
 
 ```
