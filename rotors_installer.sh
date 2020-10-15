@@ -29,6 +29,7 @@ if [[ "$1" == "true" ]]; then
 	cd ~/catkin_ws/src
 	wstool set ethzasl_msf https://github.com/ethz-asl/ethzasl_msf.git --git -y
 	wstool set rotors_simulator_demos https://github.com/ethz-asl/rotors_simulator_demos.git --git -y
+	wstool set glog_catkin https://github.com/ethz-asl/glog_catkin.git --git -y
 	wstool set catkin_simple https://github.com/catkin/catkin_simple.git --git -y
 	wstool update
 	cd ~/catkin_ws/
