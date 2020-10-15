@@ -1,7 +1,10 @@
 #!/bin/bash
 
-# Remove all preinstalled rotors packages
+# Remove all preinstalled rotors packages and install prerequisits
 sudo apt-get remove ros-melodic-rotors.*
+sudo apt-get install python-pip
+ pip install --upgrade pip
+ pip install future
 
 # Installation process according to ASL.
 # NOTE: remove or rename catkin_ws before executing this script.
