@@ -16,17 +16,6 @@ wget https://raw.githubusercontent.com/ethz-asl/rotors_simulator/master/rotors_h
 wstool merge rotors_hil.rosinstall
 wstool update
 
-# Build the workspace
-cd ~/catkin_ws/
-catkin build
-
-# Add setup file to .bashrc
-if ! grep -q devel/setup.bash /home/griffin/.bashrc; then
-	echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
-fi
-
-source ~/.bashrc
-
 # Install external state estimator
 if [[ "$1" == "true" ]]; then
 	cd ~/catkin_ws/src
@@ -35,7 +24,17 @@ if [[ "$1" == "true" ]]; then
 	wstool set glog_catkin https://github.com/ethz-asl/glog_catkin.git --git -y
 	wstool set catkin_simple https://github.com/catkin/catkin_simple.git --git -y
 	wstool update
-	cd ~/catkin_ws/
-	catkin build
-	source ~/.bashrc
 fi
+
+# Build the workspace
+cd ~/catkin_ws/
+catkin build
+
+# Add setup file to .bashrc if it does not already exist
+if ! grep -q devel/setup.bash /home/griffin/.bashrc; then
+	echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
+fi
+
+source ~/.bashrc
+
+
