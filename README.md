@@ -39,10 +39,11 @@ source ~/.bashrc
 ### Hack to fix MAV not taking off
 based on [this issue](https://github.com/ethz-asl/rotors_simulator/issues/626)
 
-- Open ```nano ~/catkin_ws/src/rotors_simulator/rotors_gazebo_plugins/CMakeLists.txt```
-- Add line ```list(APPEND targets_to_install mav_msgs)``` after line ```target_link_libraries(mav_msgs ${PROTOBUF_LIBRARY} gazebo_msgs)``` (line 215)
-- Go to ```cd ~/catkin_ws``` and enter ```catkin config --install```
-- ```catkin build```
-- Add new setup file to .bashrc ```echo "source <your_workspace>/install/setup.bash" >> ~/.bashrc```
+- Open ```nano ~/catkin_ws/src/rotors_simulator/rotors_gazebo_plugins/CMakeLists.txt```.
+- Add line ```list(APPEND targets_to_install mav_msgs)``` after line ```target_link_libraries(mav_msgs ${PROTOBUF_LIBRARY} gazebo_msgs)``` (line 215).
+- Go to ```cd ~/catkin_ws``` and enter ```catkin config --install```.
+- ```catkin build```.
+- If an error pops up regarding the build dir use ```catkin clean -b``` as suggested in the error and run ```catkin build``` again.
+- Add new setup file to .bashrc ```echo "source ~/catkin_ws/install/setup.bash" >> ~/.bashrc```
 - ```source ~/.bashrc```
 - MAV should now fly ```roslaunch rotors_gazebo mav_hovering_example.launch mav_name:=firefly world_name:=basic```
