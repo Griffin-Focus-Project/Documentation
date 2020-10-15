@@ -38,8 +38,8 @@ Go to workspace ```cd ~/catkin_ws```
 echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
 source ~/.bashrc
 ```
-### ~~Hack to fix MAV not taking off
-based on [this issue](https://github.com/ethz-asl/rotors_simulator/issues/626)~~
+### ~~Hack to fix MAV not taking off~~
+~~based on [this issue](https://github.com/ethz-asl/rotors_simulator/issues/626)~~
 
 - ~~Open ```nano ~/catkin_ws/src/rotors_simulator/rotors_gazebo_plugins/CMakeLists.txt```.~~
 - ~~Add line ```list(APPEND targets_to_install mav_msgs)``` after line ```target_link_libraries(mav_msgs ${PROTOBUF_LIBRARY} gazebo_msgs)``` (line 215).~~
