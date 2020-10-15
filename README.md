@@ -15,6 +15,8 @@ You can launch teleop_twist_keyboard (or any package for that matter) by includi
 ## Install RotorS on ROS Melodic (please add corrections)
 
 ### Normal install Process
+**NOTE:** go to ```cd /opt/ros/melodic/share``` and ```sudo apt-get remove ros-melodic-rotors.*```. Installation will not work if any rotors packages are preinstalled with ros.
+Follow the process described [here](https://github.com/ethz-asl/rotors_simulator) for kinetic.
 ```
 sudo apt-get update
 sudo apt-get install ros-melodic-joy ros-melodic-octomap-ros ros-melodic-mavlink python-wstool python-catkin-tools protobuf-compiler libgoogle-glog-dev ros-melodic-control-toolbox ros-melodic-mavros
@@ -36,17 +38,17 @@ Go to workspace ```cd ~/catkin_ws```
 echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
 source ~/.bashrc
 ```
-### Hack to fix MAV not taking off
-based on [this issue](https://github.com/ethz-asl/rotors_simulator/issues/626)
+### ~~Hack to fix MAV not taking off
+based on [this issue](https://github.com/ethz-asl/rotors_simulator/issues/626)~~
 
-- Open ```nano ~/catkin_ws/src/rotors_simulator/rotors_gazebo_plugins/CMakeLists.txt```.
-- Add line ```list(APPEND targets_to_install mav_msgs)``` after line ```target_link_libraries(mav_msgs ${PROTOBUF_LIBRARY} gazebo_msgs)``` (line 215).
-- Go to ```cd ~/catkin_ws``` and enter ```catkin config --install```.
-- ```catkin build```.
-- If an error pops up regarding the build dir use ```catkin clean -b``` as suggested in the error and run ```catkin build``` again.
-- Add new setup file to .bashrc ```echo "source ~/catkin_ws/install/setup.bash" >> ~/.bashrc```
-- ```source ~/.bashrc```
-- MAV should now fly ```roslaunch rotors_gazebo mav_hovering_example.launch mav_name:=firefly world_name:=basic```
+- ~~Open ```nano ~/catkin_ws/src/rotors_simulator/rotors_gazebo_plugins/CMakeLists.txt```.~~
+- ~~Add line ```list(APPEND targets_to_install mav_msgs)``` after line ```target_link_libraries(mav_msgs ${PROTOBUF_LIBRARY} gazebo_msgs)``` (line 215).~~
+- ~~Go to ```cd ~/catkin_ws``` and enter ```catkin config --install```.~~
+- ~~```catkin build```.~~
+- ~~If an error pops up regarding the build dir use ```catkin clean -b``` as suggested in the error and run ```catkin build``` again.~~
+- ~~Add new setup file to .bashrc ```echo "source ~/catkin_ws/install/setup.bash" >> ~/.bashrc```~~
+- ~~```source ~/.bashrc```~~
+- ~~MAV should now fly ```roslaunch rotors_gazebo mav_hovering_example.launch mav_name:=firefly world_name:=basic```~~
 
 
 ### Assembling a model with RotorS
