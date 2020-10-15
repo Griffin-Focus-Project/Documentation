@@ -47,3 +47,7 @@ based on [this issue](https://github.com/ethz-asl/rotors_simulator/issues/626)
 - Add new setup file to .bashrc ```echo "source ~/catkin_ws/install/setup.bash" >> ~/.bashrc```
 - ```source ~/.bashrc```
 - MAV should now fly ```roslaunch rotors_gazebo mav_hovering_example.launch mav_name:=firefly world_name:=basic```
+
+
+### Assembling a model with RotorS
+`.urdf` files in `~/catkin_ws/src/rotors_simulator/rotors_description/urdf`
