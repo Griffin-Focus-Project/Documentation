@@ -1,18 +1,11 @@
 # Documentation
 
-## Catkin build CMake error related to Eclipse
-- check ```catkin config``` whether or not Additional CMake Args: none
-- If this is not the case then try ```catkin config --no-cmake-args```
-
-## .launch files
-### Paths (for .launch files)
-- ROS: ```cd /opt/ros/melodic/share/```
-- Gazebo ```cd /usr/share/gazebo-9```
-
-### running teleop_twist_keyboard using ```roslaunch```
-You can launch teleop_twist_keyboard (or any package for that matter) by including ```<node name = "some name" pkg = "teleop_twist_keyboard" type = "teleop_twist_keyboard.py"/>```. This has the same effect as running ```rosrun teleop_twist_keyboard teleop_twist_keyboard.py```.
-
 ## Install RotorS on ROS Melodic (please add corrections)
+
+### Easiest way
+- Download the ```rotors_installer.sh``` script from this repo
+- Go to the directory where you downloaded the file and enter ```chmod +x rotors_installer.sh```
+- Enter ```./rotors_installer.sh``` to only install rotors_simulator or enter ```./rotors_installer.sh true``` to also install the state estimator.
 
 ### Normal install Process
 **NOTE:** go to ```cd /opt/ros/melodic/share``` and ```sudo apt-get remove ros-melodic-rotors.*```. Installation will not work if any rotors packages are preinstalled with ros.
@@ -50,6 +43,17 @@ source ~/.bashrc
 - ~~```source ~/.bashrc```~~
 - ~~MAV should now fly ```roslaunch rotors_gazebo mav_hovering_example.launch mav_name:=firefly world_name:=basic```~~
 
+## Catkin build CMake error related to Eclipse
+- check ```catkin config``` whether or not Additional CMake Args: none
+- If this is not the case then try ```catkin config --no-cmake-args```
+
+## .launch files
+### Paths (for .launch files)
+- ROS: ```cd /opt/ros/melodic/share/```
+- Gazebo ```cd /usr/share/gazebo-9```
+
+### running teleop_twist_keyboard using ```roslaunch```
+You can launch teleop_twist_keyboard (or any package for that matter) by including ```<node name = "some name" pkg = "teleop_twist_keyboard" type = "teleop_twist_keyboard.py"/>```. This has the same effect as running ```rosrun teleop_twist_keyboard teleop_twist_keyboard.py```.
 
 ### Assembling a model with RotorS
 `.urdf` files in `~/catkin_ws/src/rotors_simulator/rotors_description/urdf`
