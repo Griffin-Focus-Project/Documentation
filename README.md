@@ -20,8 +20,8 @@ source /opt/ros/melodic/setup.bash
 Go to ```cd ~/src```
 ```
 wget https://raw.githubusercontent.com/ethz-asl/rotors_simulator/master/rotors_hil.rosinstall
-$ wstool merge rotors_hil.rosinstall
-$ wstool update
+wstool merge rotors_hil.rosinstall
+wstool update
 ```
 Go to workspace ```cd ~/catkin_ws```   
 
