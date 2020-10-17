@@ -1,15 +1,22 @@
 #!/bin/bash
 
-# Remove all preinstalled rotors packages and install prerequisits
+# Remove all preinstalled RotorS packages and install prerequisits
 sudo apt-get remove ros-melodic-rotors.*
 sudo apt-get install python-pip
- pip install --upgrade pip
- pip install future
+pip install --upgrade pip
+pip install future
+
+# Install RotorS dependencies
+sudo apt-get install ros-melodic-joy ros-melodic-octomap-ros ros-melodic-mavlink python-wstool python-catkin-tools protobuf-compiler libgoogle-glog-dev ros-melodic-control-toolbox ros-melodic-mavros -y
+sudo rosdep init
+rosdep update
+source /opt/ros/kinetic/setup.bash
+
 
 # Installation process according to ASL.
 # NOTE: remove or rename catkin_ws before executing this script.
-mkdir -p ~/catkin_ws/src
-cd ~/catkin_ws/src
+mkdir -p $HOME/catkin_ws/src
+cd $HOME/catkin_ws/src
 catkin_init_workspace
 wstool init
 wget https://raw.githubusercontent.com/ethz-asl/rotors_simulator/master/rotors_hil.rosinstall
@@ -27,14 +34,14 @@ if [[ "$1" == "true" ]]; then
 fi
 
 # Build the workspace
-cd ~/catkin_ws/
+cd $HOME/catkin_ws/
 catkin build
 
 # Add setup file to .bashrc if it does not already exist
-if ! grep -q devel/setup.bash /home/griffin/.bashrc; then
+if ! grep -q devel/setup.bash $HOME/.bashrc; then
 	echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
 fi
 
-source ~/.bashrc
+source $HOME/.bashrc
 
 
