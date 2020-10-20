@@ -43,6 +43,9 @@ source ~/.bashrc
 - ~~```source ~/.bashrc```~~
 - ~~MAV should now fly ```roslaunch rotors_gazebo mav_hovering_example.launch mav_name:=firefly world_name:=basic```~~
 
+## Build ros package to be visible as an eclipse project
+- ```catkin build "package_name" --cmake-args-G"EclipseCDT4 -Unix Makefiles" -D__cplusplus=201103L -D__GXX_EXPERIMENTAL_CXX0X__=1```
+
 ## Catkin build CMake error related to Eclipse
 - check ```catkin config``` whether or not Additional CMake Args: none
 - If this is not the case then try ```catkin config --no-cmake-args```
