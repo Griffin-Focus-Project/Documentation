@@ -31,17 +31,6 @@ Go to workspace ```cd ~/catkin_ws```
 echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
 source ~/.bashrc
 ```
-### ~~Hack to fix MAV not taking off~~
-~~based on [this issue](https://github.com/ethz-asl/rotors_simulator/issues/626)~~
-
-- ~~Open ```nano ~/catkin_ws/src/rotors_simulator/rotors_gazebo_plugins/CMakeLists.txt```.~~
-- ~~Add line ```list(APPEND targets_to_install mav_msgs)``` after line ```target_link_libraries(mav_msgs ${PROTOBUF_LIBRARY} gazebo_msgs)``` (line 215).~~
-- ~~Go to ```cd ~/catkin_ws``` and enter ```catkin config --install```.~~
-- ~~```catkin build```.~~
-- ~~If an error pops up regarding the build dir use ```catkin clean -b``` as suggested in the error and run ```catkin build``` again.~~
-- ~~Add new setup file to .bashrc ```echo "source ~/catkin_ws/install/setup.bash" >> ~/.bashrc```~~
-- ~~```source ~/.bashrc```~~
-- ~~MAV should now fly ```roslaunch rotors_gazebo mav_hovering_example.launch mav_name:=firefly world_name:=basic```~~
 
 ## Build ros package to be visible as an eclipse project
 - ```catkin build "package_name" --cmake-args -G "Eclipse CDT4 - Unix Makefiles" -D__cplusplus=201103L -D__GXX_EXPERIMENTAL_CXX0X__=1```
@@ -50,10 +39,15 @@ source ~/.bashrc
 - check ```catkin config``` whether or not Additional CMake Args: none
 - If this is not the case then try ```catkin config --no-cmake-args```
 
+
 ## .launch files
 ### Paths (for .launch files)
 - ROS: ```cd /opt/ros/melodic/share/```
 - Gazebo ```cd /usr/share/gazebo-9```
+
+
+## ROS Package best Practices
+Please refer to [this repo](https://github.com/leggedrobotics/ros_best_practices) for best practices.
 
 ### running teleop_twist_keyboard using ```roslaunch```
 You can launch teleop_twist_keyboard (or any package for that matter) by including ```<node name = "some name" pkg = "teleop_twist_keyboard" type = "teleop_twist_keyboard.py"/>```. This has the same effect as running ```rosrun teleop_twist_keyboard teleop_twist_keyboard.py```.
