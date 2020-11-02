@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # Remove all preinstalled RotorS packages and install prerequisits
+sudo apt update
 sudo apt-get remove ros-melodic-rotors.*
 sudo apt-get install python-pip
 pip install --upgrade pip
@@ -25,7 +26,7 @@ wstool init
 wget https://raw.githubusercontent.com/ethz-asl/rotors_simulator/master/rotors_hil.rosinstall
 wstool merge rotors_hil.rosinstall
 wstool update
-
+c
 # Install external state estimator
 if [[ "$1" == "true" ]]; then
 	cd ~/catkin_ws/src
