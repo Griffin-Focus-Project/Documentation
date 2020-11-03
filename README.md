@@ -1,5 +1,8 @@
 # Documentation
 
+## How to format and Document your files
+We use a document format as proposed [here](http://www.edparrish.net/common/cppdoc.html).
+
 ## Install RotorS on ROS Melodic (please add corrections)
 
 ### Easiest way
