@@ -13,5 +13,5 @@ sudo apt --fix-broken install
 sudo apt-get install linux-generic-hwe-18.04-edge-upboard
 sudo apt dist-upgrade -y
 sudo update-grub
-reboot
+sudo reboot
 
