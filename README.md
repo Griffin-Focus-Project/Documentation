@@ -60,6 +60,7 @@ You can launch teleop_twist_keyboard (or any package for that matter) by includi
 
 
 ## Installation UAVCAN Gui
+Needed for ESCs Kotleta 20
 ```
 sudo apt-get install -y python3-pip python3-setuptools python3-wheel
 sudo apt-get install -y python3-numpy python3-pyqt5 python3-pyqt5.qtsvg git-core
