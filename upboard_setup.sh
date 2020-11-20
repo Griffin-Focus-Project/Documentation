@@ -6,6 +6,7 @@ sudo apt-get install terminator
 # Setup UpBoard Xtreme
 # Install Ubuntu Kernel
 # From https://wiki.up-community.org/Ubuntu_18.04
+# Causes error when reboot
 sudo add-apt-repository ppa:aaeon-cm/upboard
 sudo apt update
 sudo apt-get autoremove --purge 'linux-.*generic'
